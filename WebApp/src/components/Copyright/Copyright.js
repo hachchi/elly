@@ -1,33 +1,35 @@
 import React from "react";
-import Link from "@material-ui/core/Link";
-import Typography from "@material-ui/core/Typography";
+import { Link as MaterialLink, Typography, Box } from "@material-ui/core";
 
-export default function Copyroght() {
+const Copyright = () => {
+  const containerStyle = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#014421",
+    color: "white",
+    padding: 20,
+    width: "100%",
+    height: "100%",
+  };
+
+  const typographyStyle = {
+    color: "white",
+    fontFamily: "Montserrat-Regular",
+  };
+
   return (
-    <div
-      style={{
-        height: "100%",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#014421",
-        color: "white",
-        padding: 20,
-        width: "100%"
-      }}
-    >
-      <Typography
-        style={{ color: "white", fontFamily: "Montserrat-Regular" }}
-        variant="h6"
-        color="textSecondary"
-        align="center"
-      >
+    <Box style={containerStyle}>
+      <Typography variant="h6" color="textSecondary" align="center" style={typographyStyle}>
         {"Copyright © "}
-        <Link color="inherit" href="https://www.scorelab.org">
+        <MaterialLink color="inherit" href="https://www.scorelab.org">
           www.SCoReLab.org
-        </Link>{" "}
+        </MaterialLink>{" "}
         {new Date().getFullYear()}
         {"."}
       </Typography>
-    </div>
+    </Box>
   );
-}
+};
+
+export default Copyright;
